@@ -1,0 +1,22 @@
+
+<a *ngIf="currentUser.isUserAllowedToPost" class="btn btn-primary" routerLink="add-post/0">Add Post</a> <br />
+
+<h3 *ngIf="postList==[]">There is no post..</h3>
+
+<div *ngIf="postList!=[]">
+
+  <div class="center" *ngFor="let post of postList">
+    <div class="card">
+      <div class="card-body">
+        <label>Creation Date:</label> {{post.creationDate | date : 'shortDate'}}<br />
+        <label>Post Description:</label> {{post.postDescription}}<br />
+        <p *ngIf="post.userId != currentUser.id">This is posted by another user</p>
+        <p *ngIf="post.userId == currentUser.id">This is posted by another  you</p>
+        <button *ngIf="post.userId == currentUser.id && currentUser.isUserAllowedToEdit" class="btn btn-primary" routerLink="add-post/{{post.id}}">Edit</button>
+        <button *ngIf="post.userId == currentUser.id && currentUser.isUserAllowedToDelete" (click)="onDelete(post.id)" class="btn btn-primary">Delete</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+

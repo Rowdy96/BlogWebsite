@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="App\src\app\Models\PostAc.ts" />
+    <None Remove="App\src\app\Models\userAC.ts" />
+    <None Remove="App\src\app\Models\UsersAc.ts" />
+    <None Remove="App\src\app\user-panel\post.service.ts" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <TypeScriptCompile Include="App\src\app\Models\PostAC.ts" />
+    <TypeScriptCompile Include="App\src\app\Models\UserAC.ts" />
+    <TypeScriptCompile Include="App\src\app\Models\UsersAC.ts" />
+    <TypeScriptCompile Include="App\src\app\user-panel\post.service.ts" />
+  </ItemGroup>
+
+</Project>

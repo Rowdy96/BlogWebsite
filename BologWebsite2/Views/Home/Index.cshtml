@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <app-root>
+            <div e2e="progress-loader" class="loader-container main-loader">
+                <div class="loader-block">
+                    <div class="spinner"></div>
+                    <p class="font-semibold mt10">Loading... App</p>
+                </div>
+
+            </div>
+        </app-root>
+        <script src="dist/app/runtime.js"></script>
+        <script src="dist/app/polyfills.js"></script>
+        <script src="dist/app/styles.js"></script>
+        <script src="dist/app/vendor.js"></script>
+        <script src="dist/app/main.js"></script>
+    </div>

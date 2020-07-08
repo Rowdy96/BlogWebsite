@@ -1,0 +1,19 @@
+
+<table class="table table-striped" >
+  <thead>
+    <tr>
+      <th scope="col">User Name</th>
+      <th scope="col">Allow to Add Post</th>
+      <th scope="col">Allow to Edit Post</th>
+      <th scope="col">Allow to Delete Post</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userList">
+      <td>{{user.name}}</td>
+      <td><button class="btn btn-primary" (click)="GivePermission(user,add)">{{user.isUserAllowedToPost ? 'Allowed' : 'Not Allowed'}}</button></td>
+      <td><button class="btn btn-primary" (click)="GivePermission(user,edit)">{{user.isUserAllowedToEdit ? 'Allowed' : 'Not Allowed'}}</button></td>
+      <td><button class="btn btn-primary" (click)="GivePermission(user,delete)">{{user.isUserAllowedToDelete ? 'Allowed' : 'Not Allowed'}}</button></td>
+    </tr>
+  </tbody>
+</table>

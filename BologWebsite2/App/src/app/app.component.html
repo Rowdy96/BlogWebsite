@@ -1,0 +1,15 @@
+<ul *ngIf="user" class="nav navbar-nav ml-auto">
+  <li><a >{{user.name}} is looged in</a>
+  <li><a class="btn btn-primary" (click)="Logout()">Logout</a></li>
+</ul>
+
+<ul *ngIf="user==null" class="nav navbar-nav ml-auto">
+  <li><a href="https://localhost:44372/Home/Login">Login or Register</a></li>
+</ul>
+
+<div *ngIf="user!=null">
+  <a *ngIf="isAdminUser" class="btn btn-primary" routerLink="/AdminPanel">AdminPanel</a>
+  <a *ngIf="!isAdminUser" class="btn btn-primary" routerLink="/UserPanel">All Blogs</a>
+</div>
+
+<router-outlet></router-outlet>
